@@ -15,8 +15,6 @@ export class HomePageComponent implements OnInit {
     private commentsService: CommentsService
   ) {}
 
-  //TODO hacer toda aquí el filtrado: ?????
-
   topUsersPost: any[] = [];
   topUsersComment: any[] = [];
   topPosts: any[] = [];
@@ -35,8 +33,6 @@ export class HomePageComponent implements OnInit {
       value: this.postsService.postsSignal().length,
     },
   ];
-
-  //TODO : Crear métodos dentro del servicio para retornar la data. Tenerlo todo en el servicio
 
   ngOnInit(): void {
     this.topUsersPost = this.usersService.getTopUsersByPosts();

@@ -1,5 +1,8 @@
-<button mat-fab color="accent" [routerLink]="[toGo]"></button>
-<a [routerLink]="[toGo]">aaaa</a>
+<!-- TODO: Samu rutas -->
+<button mat-fab color="accent" (click)="goToElement()">
+  <mat-icon>add</mat-icon>
+</button>
+
 <table mat-table [dataSource]="data" class="mat-elevation-z8">
   <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
     <th mat-header-cell *matHeaderCellDef>{{ column | uppercase }}</th>
@@ -8,7 +11,8 @@
         {{ row[column] }}
       </ng-container>
       <ng-container *ngIf="column === 'actions'">
-        <button mat-icon-button [routerLink]="['/', toGo, row.id]">
+        <!-- TODO: Samu rutas -->
+        <button mat-icon-button (click)="goToElement(row.id)">
           <mat-icon>edit</mat-icon>
         </button>
         <button
