@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+  <div *ngFor="let field of fields" class="form-group">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ field | titlecase }}</mat-label>
+      <input matInput [formControlName]="field" />
+    </mat-form-field>
+  </div>
+
+  <button type="submit" mat-raised-button color="primary">Guardar</button>
+</form>

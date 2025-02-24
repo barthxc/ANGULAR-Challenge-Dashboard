@@ -1,0 +1,26 @@
+<mat-card appearance="raised">
+  <mat-card-title>{{ title }}</mat-card-title>
+
+  <mat-card-content>
+    <div class="row header" *ngIf="data.length > 0 && haveHead">
+      <ng-container *ngFor="let key of objectKeys(data[0])">
+        <div class="cell" *ngIf="key !== 'id'">
+          {{ key | uppercase }}
+        </div>
+      </ng-container>
+    </div>
+
+    <div
+      *ngFor="let item of data"
+      class="row hover"
+      [routerLink]="[routerName, item.id]"
+    >
+      >
+      <ng-container *ngFor="let key of objectKeys(item)">
+        <div class="cell" *ngIf="key !== 'id'">
+          {{ item[key] }}
+        </div>
+      </ng-container>
+    </div>
+  </mat-card-content>
+</mat-card>

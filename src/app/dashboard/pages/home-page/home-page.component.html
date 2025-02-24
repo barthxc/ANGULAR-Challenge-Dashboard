@@ -1,1 +1,37 @@
-<h1>página principal</h1>
+<h1>Inicio</h1>
+
+<div class="grid-page">
+  <card title="Resumen" [data]="resume$" [haveHead]="false"></card>
+  <card title="Top Users" [data]="topUsersPost" routerName="user"></card>
+  <card title="Top Posts" [data]="topPosts" routerName="post"></card>
+  <card title="Top Comments" [data]="topUsersComment" routerName="user"></card>
+</div>
+
+<!--
+<mat-card appearance="raised">
+  <mat-card-title>Resumen</mat-card-title>
+  <mat-card-header>Usuarios - 4 </mat-card-header>
+  <mat-card-header>Posts - 10 </mat-card-header>
+  <mat-card-header>Comentarios - 50 </mat-card-header>
+</mat-card>
+
+<mat-card appearance="raised">
+  <mat-card-title>Top 3 - Users</mat-card-title>
+  <mat-card-header> Alex </mat-card-header>
+  <mat-card-header> Charly </mat-card-header>
+  <mat-card-header> Miguel </mat-card-header>
+</mat-card>
+
+<mat-card appearance="raised">
+  <mat-card-title>Top 3 - Posts</mat-card-title>
+  <mat-card-header> Tittle1 </mat-card-header>
+  <mat-card-header> Tittle2 </mat-card-header>
+  <mat-card-header> Tittle3 </mat-card-header>
+</mat-card>
+
+<mat-card appearance="raised">
+  <mat-card-title>Top 3 - Coments</mat-card-title>
+  <mat-card-header> Coleguita </mat-card-header>
+  <mat-card-header> Comentador Pro </mat-card-header>
+  <mat-card-header> Nick Trabajador </mat-card-header>
+</mat-card> -->
