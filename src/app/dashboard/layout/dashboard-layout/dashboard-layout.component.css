@@ -32,7 +32,7 @@ mat-sidenav .expanded {
 }
 
 mat-sidenav-content {
-  padding: 0rem 1rem 1rem 1rem;
+  padding: 4rem 1rem 1rem 1rem;
   height: -webkit-fill-available;
 }
 
@@ -44,7 +44,7 @@ mat-sidenav-content {
 
 @media screen and (min-width: 600px) {
   mat-sidenav-content {
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
 
   mat-sidenav {

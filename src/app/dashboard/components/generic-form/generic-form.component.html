@@ -1,10 +1,21 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
-  <div *ngFor="let field of fields" class="form-group">
-    <mat-form-field appearance="outline">
-      <mat-label>{{ field | titlecase }}</mat-label>
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="editElement()">
+  <div *ngFor="let field of objectKeys(form.controls)">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ field }}</mat-label>
       <input matInput [formControlName]="field" />
+
+      <mat-error *ngIf="form.get(field)?.invalid && form.get(field)?.touched">
+        Este campo es obligatorio.
+      </mat-error>
     </mat-form-field>
   </div>
 
-  <button type="submit" mat-raised-button color="primary">Guardar</button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="form.invalid"
+  >
+    Submit
+  </button>
 </form>

@@ -1,188 +1,287 @@
 {
   "users": [
-    { "id": "1", "name": "Alice", "posts": 5, "comments": 10 },
-    { "id": "2", "name": "Bob", "posts": 3, "comments": 5 },
-    { "id": "3", "name": "Charlie", "posts": 2, "comments": 7 },
-    { "id": "4", "name": "Diana", "posts": 6, "comments": 2 },
-    { "id": "5", "name": "Eve", "posts": 4, "comments": 12 },
-    { "id": "6", "name": "Frank", "posts": 3, "comments": 8 },
-    { "id": "7", "name": "Grace", "posts": 7, "comments": 15 },
-    { "id": "8", "name": "Hank", "posts": 6, "comments": 5 },
-    { "id": "9", "name": "Ivy", "posts": 5, "comments": 9 },
-    { "id": "10", "name": "Jack", "posts": 4, "comments": 10 }
+    { "id": "1", "name": "Alice", "posts": 2, "comments": 5 },
+    { "id": "2", "name": "Bob", "posts": 2, "comments": 4 },
+    { "id": "3", "name": "Charlie", "posts": 2, "comments": 6 },
+    { "id": "4", "name": "Diana", "posts": 2, "comments": 5 },
+    { "id": "5", "name": "Eve", "posts": 2, "comments": 8 },
+    { "id": "6", "name": "Frank", "posts": 2, "comments": 7 },
+    { "id": "7", "name": "Grace", "posts": 2, "comments": 6 },
+    { "id": "8", "name": "Hank", "posts": 2, "comments": 6 },
+    { "id": "9", "name": "Ivy", "posts": 2, "comments": 7 },
+    { "id": "10", "name": "Jack", "posts": 2, "comments": 6 }
   ],
   "posts": [
     {
       "id": "101",
       "title": "First Post",
       "authorId": "1",
-      "comments": 4,
+      "comments": 3,
       "date": "2024-02-17"
     },
     {
       "id": "102",
-      "title": "Angular Tips",
-      "authorId": "2",
-      "comments": 3,
+      "title": "JavaScript Tips",
+      "authorId": "1",
+      "comments": 2,
       "date": "2024-02-18"
     },
     {
       "id": "103",
-      "title": "Material UI",
-      "authorId": "3",
-      "comments": 7,
+      "title": "Angular Best Practices",
+      "authorId": "2",
+      "comments": 3,
       "date": "2024-02-19"
     },
     {
       "id": "104",
-      "title": "Web Security",
-      "authorId": "4",
-      "comments": 5,
+      "title": "React vs Vue",
+      "authorId": "2",
+      "comments": 1,
       "date": "2024-02-20"
     },
     {
       "id": "105",
-      "title": "AI in 2024",
-      "authorId": "5",
-      "comments": 6,
+      "title": "CSS Grid Basics",
+      "authorId": "3",
+      "comments": 4,
       "date": "2024-02-21"
     },
     {
       "id": "106",
       "title": "Frontend vs Backend",
-      "authorId": "6",
-      "comments": 8,
+      "authorId": "3",
+      "comments": 2,
       "date": "2024-02-22"
     },
     {
       "id": "107",
-      "title": "Databases 101",
-      "authorId": "7",
-      "comments": 9,
+      "title": "Web Security 101",
+      "authorId": "4",
+      "comments": 2,
       "date": "2024-02-23"
     },
     {
       "id": "108",
-      "title": "Cloud Computing",
-      "authorId": "8",
-      "comments": 7,
+      "title": "Database Management",
+      "authorId": "4",
+      "comments": 3,
       "date": "2024-02-24"
     },
     {
       "id": "109",
-      "title": "TypeScript Basics",
-      "authorId": "9",
-      "comments": 10,
+      "title": "Machine Learning Basics",
+      "authorId": "5",
+      "comments": 4,
       "date": "2024-02-25"
     },
     {
       "id": "110",
-      "title": "GraphQL vs REST",
-      "authorId": "10",
-      "comments": 6,
+      "title": "AI in Software Development",
+      "authorId": "5",
+      "comments": 4,
       "date": "2024-02-26"
     },
     {
       "id": "111",
-      "title": "Web Components",
-      "authorId": "1",
-      "comments": 5,
+      "title": "Cloud Computing for Beginners",
+      "authorId": "6",
+      "comments": 4,
       "date": "2024-02-27"
     },
     {
       "id": "112",
-      "title": "Vue vs React",
-      "authorId": "2",
-      "comments": 4,
+      "title": "Node.js Fundamentals",
+      "authorId": "6",
+      "comments": 3,
       "date": "2024-02-28"
     },
     {
       "id": "113",
-      "title": "Svelte Advantages",
-      "authorId": "3",
+      "title": "TypeScript for Beginners",
+      "authorId": "7",
       "comments": 3,
-      "date": "2024-02-29"
-    },
-    {
-      "id": "114",
-      "title": "Blockchain Basics",
-      "authorId": "4",
-      "comments": 7,
       "date": "2024-03-01"
     },
     {
-      "id": "115",
-      "title": "Cybersecurity Trends",
-      "authorId": "5",
-      "comments": 8,
+      "id": "114",
+      "title": "Docker and Containers",
+      "authorId": "7",
+      "comments": 3,
       "date": "2024-03-02"
     },
     {
-      "id": "116",
-      "title": "The Future of AI",
-      "authorId": "6",
-      "comments": 10,
+      "id": "115",
+      "title": "GraphQL Basics",
+      "authorId": "8",
+      "comments": 3,
       "date": "2024-03-03"
     },
     {
-      "id": "117",
-      "title": "Open Source Contribution",
-      "authorId": "7",
-      "comments": 5,
+      "id": "116",
+      "title": "Database Optimization",
+      "authorId": "8",
+      "comments": 3,
       "date": "2024-03-04"
     },
     {
-      "id": "118",
-      "title": "Performance Optimization",
-      "authorId": "8",
-      "comments": 6,
+      "id": "117",
+      "title": "DevOps Introduction",
+      "authorId": "9",
+      "comments": 3,
       "date": "2024-03-05"
     },
     {
-      "id": "119",
-      "title": "Machine Learning Basics",
+      "id": "118",
+      "title": "AWS Services Overview",
       "authorId": "9",
-      "comments": 7,
+      "comments": 4,
       "date": "2024-03-06"
     },
     {
-      "id": "120",
-      "title": "Functional Programming",
+      "id": "119",
+      "title": "JavaScript Debugging",
       "authorId": "10",
-      "comments": 8,
+      "comments": 4,
       "date": "2024-03-07"
+    },
+    {
+      "id": "120",
+      "title": "Frontend Frameworks Comparison",
+      "authorId": "10",
+      "comments": 2,
+      "date": "2024-03-08"
     }
   ],
   "comments": [
     { "id": "1001", "text": "Great post!", "userId": "2", "postId": "101" },
     {
       "id": "1002",
-      "text": "Thanks for sharing!",
+      "text": "Very informative.",
       "userId": "3",
-      "postId": "102"
+      "postId": "101"
     },
-    { "id": "1003", "text": "I love Angular!", "userId": "1", "postId": "103" },
+    {
+      "id": "1003",
+      "text": "I learned a lot, thanks!",
+      "userId": "4",
+      "postId": "101"
+    },
     {
       "id": "1004",
-      "text": "Very informative",
+      "text": "Interesting, I will try this.",
+      "userId": "5",
+      "postId": "102"
+    },
+    {
+      "id": "1005",
+      "text": "This is a great tip!",
+      "userId": "6",
+      "postId": "102"
+    },
+    {
+      "id": "1006",
+      "text": "Nice insights on Angular.",
+      "userId": "1",
+      "postId": "103"
+    },
+    {
+      "id": "1007",
+      "text": "Good comparison!",
+      "userId": "2",
+      "postId": "103"
+    },
+    {
+      "id": "1008",
+      "text": "Could you explain this further?",
+      "userId": "3",
+      "postId": "103"
+    },
+    {
+      "id": "1009",
+      "text": "Short but useful post.",
       "userId": "4",
       "postId": "104"
     },
-    { "id": "1005", "text": "This is useful", "userId": "5", "postId": "105" },
-    { "id": "1006", "text": "Helpful content", "userId": "6", "postId": "106" },
-    { "id": "1007", "text": "Awesome tips", "userId": "7", "postId": "107" },
-    {
-      "id": "1008",
-      "text": "Very well written",
-      "userId": "8",
-      "postId": "108"
-    },
-    { "id": "1009", "text": "Insightful read", "userId": "9", "postId": "109" },
     {
       "id": "1010",
-      "text": "Great explanation!",
-      "userId": "10",
+      "text": "Very helpful, thanks!",
+      "userId": "5",
+      "postId": "104"
+    },
+    {
+      "id": "1011",
+      "text": "Great for beginners.",
+      "userId": "6",
+      "postId": "105"
+    },
+    {
+      "id": "1012",
+      "text": "CSS Grid is awesome!",
+      "userId": "7",
+      "postId": "105"
+    },
+    {
+      "id": "1013",
+      "text": "I didn’t know about this trick.",
+      "userId": "8",
+      "postId": "106"
+    },
+    {
+      "id": "1014",
+      "text": "Nice explanation.",
+      "userId": "9",
+      "postId": "106"
+    },
+    { "id": "1015", "text": "Very detailed.", "userId": "10", "postId": "107" },
+    {
+      "id": "1016",
+      "text": "Thanks for sharing this.",
+      "userId": "2",
+      "postId": "107"
+    },
+    {
+      "id": "1017",
+      "text": "Great starting point.",
+      "userId": "3",
+      "postId": "108"
+    },
+    {
+      "id": "1018",
+      "text": "This helped me a lot.",
+      "userId": "4",
+      "postId": "108"
+    },
+    {
+      "id": "1019",
+      "text": "Interesting topic.",
+      "userId": "5",
+      "postId": "109"
+    },
+    {
+      "id": "1020",
+      "text": "AI is definitely the future.",
+      "userId": "6",
+      "postId": "109"
+    },
+    { "id": "1021", "text": "Good overview.", "userId": "7", "postId": "110" },
+    {
+      "id": "1022",
+      "text": "Very helpful insights.",
+      "userId": "8",
       "postId": "110"
+    },
+    {
+      "id": "1023",
+      "text": "Great tips on debugging.",
+      "userId": "9",
+      "postId": "119"
+    },
+    {
+      "id": "1024",
+      "text": "Thanks, this was really useful!",
+      "userId": "10",
+      "postId": "119"
     }
   ]
 }

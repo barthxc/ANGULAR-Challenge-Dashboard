@@ -26,12 +26,4 @@ export class CommentsPageComponent {
       'success'
     );
   };
-
-  updateComent = (comentId: string) => {
-    console.log('Actualizar coment', comentId);
-  };
-
-  createComent = () => {
-    console.log('Crear nuevo coment');
-  };
 }

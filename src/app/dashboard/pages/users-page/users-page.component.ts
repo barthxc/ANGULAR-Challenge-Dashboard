@@ -1,3 +1,4 @@
+import { LocalDataService } from './../../services/local-data.service';
 import { DialogService } from './../../services/dialog.service';
 import { Component } from '@angular/core';
 import { UsersService } from '../../services/users.service';
@@ -9,7 +10,8 @@ import { UsersService } from '../../services/users.service';
 export class UsersPageComponent {
   constructor(
     private usersService: UsersService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private localDataService: LocalDataService
   ) {}
 
   users = this.usersService.usersSignal();
@@ -21,7 +23,7 @@ export class UsersPageComponent {
       'Eliminar',
       'Cancelar',
       () => {
-        this.usersService.deleteUser(userId);
+        this.localDataService.deleteUserAndPosts(userId);
       },
       'Se ha eliminado el usuario correctamente',
       'success'

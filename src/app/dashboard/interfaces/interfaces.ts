@@ -10,7 +10,6 @@ export interface PostResponse {
   title: string;
   authorId: string;
   comments: number;
-  date: string;
 }
 
 export interface CommentResponse {

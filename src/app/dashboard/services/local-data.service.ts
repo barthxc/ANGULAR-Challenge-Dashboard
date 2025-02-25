@@ -21,10 +21,10 @@ export class LocalDataService {
       this.commentsService.getComments();
   }
 
-  createUserAndPosts(user: UserResponse, posts: PostResponse[]) {
-    this.usersService.newUser(user);
-    posts.forEach((post) => this.postsService.newPost(post));
-  }
+  // createUserAndPosts(user: UserResponse, posts: PostResponse[]) {
+  //   this.usersService.newUser(user);
+  //   posts.forEach((post) => this.postsService.newPost(post));
+  // }
 
   deleteUserAndPosts(userId: string) {
     this.postsService.deletePostsByUser(userId);
@@ -32,12 +32,12 @@ export class LocalDataService {
     this.usersService.deleteUser(userId);
   }
 
-  editUserAndPosts(
-    userId: string,
-    updatedUser: UserResponse,
-    posts: PostResponse[]
-  ) {
-    this.usersService.editUser(userId, updatedUser);
-    posts.forEach((post) => this.postsService.editPost(post.id, post));
-  }
+  // editUserAndPosts(
+  //   userId: string,
+  //   updatedUser: UserResponse,
+  //   posts: PostResponse[]
+  // ) {
+  //   this.usersService.editUser(userId, updatedUser);
+  //   posts.forEach((post) => this.postsService.editPost(post.id, post));
+  // }
 }

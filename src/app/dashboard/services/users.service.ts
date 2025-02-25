@@ -22,7 +22,11 @@ export class UsersService {
 
   newUser(user: UserResponse) {
     this.http
-      .post<UserResponse>(`${this.baseUrl}/users`, user)
+      .post<UserResponse>(`${this.baseUrl}/users`, {
+        name: user.name,
+        posts: 0,
+        comments: 0,
+      })
       .subscribe((newUser) => {
         this.usersSignal.update((users) => [...users, newUser]);
       });

@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatInputModule } from '@angular/material/input';
 
 /* SERVICES */
 import { DialogService } from './services/dialog.service';
@@ -28,9 +29,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { UsersPageComponent } from './pages/users-page/users-page.component';
 import { PostsPageComponent } from './pages/posts-page/posts-page.component';
 import { CommentsPageComponent } from './pages/comments-page/comments-page.component';
-import { PostByIdPageComponent } from './pages/post-by-id-page/post-by-id-page.component';
-import { UserByIdPageComponent } from './pages/user-by-id-page/user-by-id-page.component';
-import { CommentByIdPageComponent } from './pages/comment-by-id-page/comment-by-id-page.component';
 import { ElementByIdPageComponent } from './pages/element-by-id-page/element-by-id-page.component';
 
 import { CardComponent } from './components/card/card.component';
@@ -40,6 +38,10 @@ import { ToastComponent } from './components/toast/toast.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { GenericFormComponent } from './components/generic-form/generic-form.component';
 import { ToastService } from './services/toast.service';
+import { PostFormComponent } from './components/post-form/post-form.component';
+import { CommentFormComponent } from './components/comment-form/comment-form.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { NewElementPageComponent } from './pages/new-element-page/new-element-page.component';
 
 @NgModule({
   declarations: [
@@ -48,9 +50,6 @@ import { ToastService } from './services/toast.service';
     UsersPageComponent,
     PostsPageComponent,
     CommentsPageComponent,
-    PostByIdPageComponent,
-    UserByIdPageComponent,
-    CommentByIdPageComponent,
     ElementByIdPageComponent,
     CardComponent,
     LoadingComponent,
@@ -58,6 +57,10 @@ import { ToastService } from './services/toast.service';
     ToastComponent,
     DialogComponent,
     GenericFormComponent,
+    PostFormComponent,
+    CommentFormComponent,
+    UserFormComponent,
+    NewElementPageComponent,
   ],
   imports: [
     CommonModule,
@@ -77,6 +80,7 @@ import { ToastService } from './services/toast.service';
     MatDialogModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    MatInputModule,
   ],
   providers: [DialogService, ToastService],
 })

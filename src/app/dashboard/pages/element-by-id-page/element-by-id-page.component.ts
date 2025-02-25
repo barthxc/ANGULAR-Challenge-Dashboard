@@ -1,8 +1,11 @@
-import { PostsService } from './../../services/posts.service';
-import { CommentsService } from './../../services/comments.service';
-import { UsersService } from './../../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { EntityService } from '../../services/entity.service';
+import {
+  CommentResponse,
+  PostResponse,
+  UserResponse,
+} from '../../interfaces/interfaces';
 
 @Component({
   templateUrl: './element-by-id-page.component.html',
@@ -10,39 +13,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ElementByIdPageComponent implements OnInit {
   title: string = 'Editar ';
-
-  data: any;
-
-  editFunction: any;
+  data: UserResponse | PostResponse | CommentResponse | undefined = undefined;
+  editFunction!:
+    | ((userId: string, updatedUser: UserResponse) => void)
+    | ((postId: string, updatedPost: PostResponse) => void)
+    | ((commentId: string, updatedComment: CommentResponse) => void);
 
   constructor(
     private route: ActivatedRoute,
-    private usersService: UsersService,
-    private commentsService: CommentsService,
-    private postsService: PostsService
+    private entityService: EntityService
   ) {}
 
   ngOnInit(): void {
     this.route.url.subscribe((segments) => {
-      switch (segments[0].path) {
-        case 'user':
-          this.title += ' Usuario';
-          this.data = this.usersService
-            .usersSignal()
-            .find((user) => user.id === segments[1].path);
-          this.editFunction = this.usersService.editUser;
-          break;
-        case 'coment':
-          this.title += ' Comentario';
-          break;
-        case 'post':
-          this.title += ' Post';
-          break;
-        default:
-          break;
+      const entityType = segments[0]?.path;
+      const entityId = segments[1]?.path;
+
+      if (!entityType) return;
+
+      const entity = this.entityService.getEntityService(entityType, entityId);
+      if (entity) {
+        this.title += ` ${entityType}`;
+        this.data = entity.data;
+        this.editFunction = entity.editFunction;
       }
     });
-
-    console.log(`El usuario es ${JSON.stringify(this.data)}`);
   }
 }

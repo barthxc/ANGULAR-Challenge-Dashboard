@@ -35,10 +35,16 @@ export class PostsService {
   }
 
   deletePostsByUser(userId: string) {
-    this.http.delete(`${this.baseUrl}/posts/user/${userId}`).subscribe(() => {
-      this.postsSignal.update((posts) =>
-        posts.filter((post) => post.authorId !== userId)
-      );
+    const postsToDelete = this.postsSignal().filter(
+      (post) => post.authorId === userId
+    );
+
+    postsToDelete.forEach((post) => {
+      this.http.delete(`${this.baseUrl}/posts/${post.id}`).subscribe(() => {
+        this.postsSignal.update((postsList) =>
+          postsList.filter((p) => p.id !== post.id)
+        );
+      });
     });
   }
 

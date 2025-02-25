@@ -37,13 +37,19 @@ export class CommentsService {
   }
 
   deleteCommentsByUser(userId: string) {
-    this.http
-      .delete(`${this.baseUrl}/comments/user/${userId}`)
-      .subscribe(() => {
-        this.commentsSignal.update((comments) =>
-          comments.filter((comment) => comment.userId !== userId)
-        );
-      });
+    const commentsToDelete = this.commentsSignal().filter(
+      (comment) => comment.userId === userId
+    );
+
+    commentsToDelete.forEach((comment) => {
+      this.http
+        .delete(`${this.baseUrl}/comments/${comment.id}`)
+        .subscribe(() => {
+          this.commentsSignal.update((postsList) =>
+            postsList.filter((c) => c.id !== comment.id)
+          );
+        });
+    });
   }
 
   editComment(commentId: string, updatedComment: CommentResponse) {
