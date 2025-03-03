@@ -16,6 +16,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 /* SERVICES */
 import { DialogService } from './services/dialog.service';
@@ -42,6 +43,11 @@ import { PostFormComponent } from './components/post-form/post-form.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { NewElementPageComponent } from './pages/new-element-page/new-element-page.component';
+import { ChartComponent } from './components/chart/chart.component';
+import { MatTabsModule } from '@angular/material/tabs';
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { UserSearchComponent } from './components/user-search/user-search.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +67,8 @@ import { NewElementPageComponent } from './pages/new-element-page/new-element-pa
     CommentFormComponent,
     UserFormComponent,
     NewElementPageComponent,
+    ChartComponent,
+    UserSearchComponent,
   ],
   imports: [
     CommonModule,
@@ -81,6 +89,9 @@ import { NewElementPageComponent } from './pages/new-element-page/new-element-pa
     MatFormFieldModule,
     MatSnackBarModule,
     MatInputModule,
+    NgxChartsModule,
+    MatTabsModule,
+    MatAutocompleteModule,
   ],
   providers: [DialogService, ToastService],
 })

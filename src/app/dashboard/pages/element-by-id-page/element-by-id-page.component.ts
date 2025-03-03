@@ -12,7 +12,7 @@ import {
   styleUrls: ['./element-by-id-page.component.css'],
 })
 export class ElementByIdPageComponent implements OnInit {
-  title: string = 'Editar ';
+  title: string = '';
   data: UserResponse | PostResponse | CommentResponse | undefined = undefined;
   editFunction!:
     | ((userId: string, updatedUser: UserResponse) => void)
@@ -21,7 +21,7 @@ export class ElementByIdPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private entityService: EntityService
+    private entityService: EntityService,
   ) {}
 
   ngOnInit(): void {
@@ -33,7 +33,7 @@ export class ElementByIdPageComponent implements OnInit {
 
       const entity = this.entityService.getEntityService(entityType, entityId);
       if (entity) {
-        this.title += ` ${entityType}`;
+        this.title = `Editar ${entityType}`;
         this.data = entity.data;
         this.editFunction = entity.editFunction;
       }

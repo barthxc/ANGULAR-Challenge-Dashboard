@@ -1,8 +1,11 @@
+import { UsersService } from './../../services/users.service';
 import { LocalDataService } from './../../services/local-data.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, effect, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { LoadingService } from 'src/app/shared/services/loading.service';
+import { UserResponse } from '../../interfaces/interfaces';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface MenuItem {
   label: string;
@@ -21,8 +24,15 @@ export class DashboardLayoutComponent implements OnInit {
   constructor(
     private observer: BreakpointObserver,
     private loadingService: LoadingService,
-    private localDataService: LocalDataService
-  ) {}
+    private localDataService: LocalDataService,
+    private usersService: UsersService,
+    private route: Router,
+    private router: ActivatedRoute,
+  ) {
+    effect(() => {
+      this.users = this.usersService.usersSignal();
+    });
+  }
 
   menuItems: MenuItem[] = [
     { label: 'Inicio', icon: 'house', router: 'dashboard' },
@@ -36,6 +46,7 @@ export class DashboardLayoutComponent implements OnInit {
   isMobile: boolean = true;
 
   isCollapsed: boolean = true;
+  users!: UserResponse[];
 
   ngOnInit(): void {
     this.observer.observe(['(max-width:800px)']).subscribe((screenSize) => {
@@ -58,4 +69,8 @@ export class DashboardLayoutComponent implements OnInit {
       this.isCollapsed = !this.isCollapsed;
     }
   }
+
+  goToFn = (route: []) => {
+    this.route.navigate(route, { relativeTo: this.router.parent });
+  };
 }

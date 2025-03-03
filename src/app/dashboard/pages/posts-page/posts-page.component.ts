@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
 import { DialogService } from '../../services/dialog.service';
-import { ToastService } from '../../services/toast.service';
 
 @Component({
   templateUrl: './posts-page.component.html',
@@ -11,7 +10,6 @@ export class PostsPageComponent {
   constructor(
     private postsService: PostsService,
     private dialogService: DialogService,
-    private toastService: ToastService
   ) {}
 
   posts = this.postsService.postsSignal();
@@ -26,7 +24,7 @@ export class PostsPageComponent {
         this.postsService.deletePost(postId);
       },
       'Se ha eliminado el post correctamente',
-      'success'
+      'success',
     );
   };
 

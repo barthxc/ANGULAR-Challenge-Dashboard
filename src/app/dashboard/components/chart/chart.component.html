@@ -1,0 +1,36 @@
+<div class="chart">
+  <h1>{{ title }}</h1>
+  <ngx-charts-bar-vertical
+    *ngIf="chartType === 'bar'"
+    [view]="view"
+    [results]="chartDataInfo.data"
+    [gradient]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="'Cantidad'"
+    (select)="onSelect($event)"
+  >
+  </ngx-charts-bar-vertical>
+
+  <ngx-charts-pie-chart
+    *ngIf="chartType === 'pie'"
+    [view]="view"
+    [results]="chartDataInfo.data"
+    [labels]="true"
+  >
+  </ngx-charts-pie-chart>
+
+  <button
+    *ngIf="
+      chartDataInfo.dataType !== 'user' && chartDataInfo.dataType !== 'post'
+    "
+    mat-fab
+    color="accent"
+    (click)="resetChartData()"
+  >
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>

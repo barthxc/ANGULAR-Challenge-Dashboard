@@ -53,18 +53,6 @@
       "name": "Ivy",
       "posts": 2,
       "comments": 7
-    },
-    {
-      "id": "10",
-      "name": "Jack",
-      "posts": 2,
-      "comments": 6
-    },
-    {
-      "id": "f8a5",
-      "name": "pistachito",
-      "posts": 0,
-      "comments": 0
     }
   ],
   "posts": [
@@ -175,23 +163,6 @@
       "title": "AWS Services Overview",
       "authorId": "9",
       "comments": 4
-    },
-    {
-      "id": "119",
-      "title": "JavaScript Debugging",
-      "authorId": "10",
-      "comments": 4
-    },
-    {
-      "id": "120",
-      "title": "Frontend Frameworks Comparison",
-      "authorId": "10",
-      "comments": 2
-    },
-    {
-      "id": "6604",
-      "title": "Esto es un post bro",
-      "authorId": "8"
     }
   ],
   "comments": [
@@ -280,12 +251,6 @@
       "postId": "106"
     },
     {
-      "id": "1015",
-      "text": "Very detailed.",
-      "userId": "10",
-      "postId": "107"
-    },
-    {
       "id": "1016",
       "text": "Thanks for sharing this.",
       "userId": "2",
@@ -331,13 +296,7 @@
       "id": "1023",
       "text": "Great tips on debugging.",
       "userId": "9",
-      "postId": "119"
-    },
-    {
-      "id": "1024",
-      "text": "Thanks, this was really useful!",
-      "userId": "10",
-      "postId": "119"
+      "postId": null
     }
   ]
 }
