@@ -33,16 +33,36 @@ export class PostsService {
       this.postsSignal.update((posts) => posts.filter((p) => p.id !== postId));
     });
   }
+  //!TODO TESt using forkJoin
+  /*
+import { forkJoin } from 'rxjs';
+
+deletePostsByUser(userId: string) {
+  const postsToDelete = this.postsSignal().filter(
+    (post) => post.authorId === userId
+  );
+
+  const deleteRequests = postsToDelete.map((post) =>
+    this.http.delete(`${this.baseUrl}/posts/${post.id}`)
+  );
+
+  forkJoin(deleteRequests).subscribe(() => {
+    this.postsSignal.update((posts) =>
+      posts.filter((p) => p.authorId !== userId)
+    );
+  });
+}
+*/
 
   deletePostsByUser(userId: string) {
     const postsToDelete = this.postsSignal().filter(
-      (post) => post.authorId === userId
+      (post) => post.authorId === userId,
     );
 
     postsToDelete.forEach((post) => {
       this.http.delete(`${this.baseUrl}/posts/${post.id}`).subscribe(() => {
         this.postsSignal.update((postsList) =>
-          postsList.filter((p) => p.id !== post.id)
+          postsList.filter((p) => p.id !== post.id),
         );
       });
     });
@@ -54,8 +74,8 @@ export class PostsService {
       .subscribe(() => {
         this.postsSignal.update((posts) =>
           posts.map((post) =>
-            post.id === postId ? { ...post, ...updatedPost } : post
-          )
+            post.id === postId ? { ...post, ...updatedPost } : post,
+          ),
         );
       });
   }

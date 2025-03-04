@@ -31,14 +31,33 @@ export class CommentsService {
   deleteComment(commentId: string) {
     this.http.delete(`${this.baseUrl}/comments/${commentId}`).subscribe(() => {
       this.commentsSignal.update((comments) =>
-        comments.filter((comment) => comment.id !== commentId)
+        comments.filter((comment) => comment.id !== commentId),
       );
     });
   }
 
+  //!TODO
+  /*
+deleteCommentsByUser(userId: string) {
+  const commentsToDelete = this.commentsSignal().filter(
+    (comment) => comment.userId === userId
+  );
+
+  const deleteRequests = commentsToDelete.map((comment) =>
+    this.http.delete(`${this.baseUrl}/comments/${comment.id}`)
+  );
+
+  forkJoin(deleteRequests).subscribe(() => {
+    this.commentsSignal.update((comments) =>
+      comments.filter((c) => c.userId !== userId)
+    );
+  });
+}
+
+*/
   deleteCommentsByUser(userId: string) {
     const commentsToDelete = this.commentsSignal().filter(
-      (comment) => comment.userId === userId
+      (comment) => comment.userId === userId,
     );
 
     commentsToDelete.forEach((comment) => {
@@ -46,7 +65,7 @@ export class CommentsService {
         .delete(`${this.baseUrl}/comments/${comment.id}`)
         .subscribe(() => {
           this.commentsSignal.update((postsList) =>
-            postsList.filter((c) => c.id !== comment.id)
+            postsList.filter((c) => c.id !== comment.id),
           );
         });
     });
@@ -56,15 +75,15 @@ export class CommentsService {
     this.http
       .patch<CommentResponse>(
         `${this.baseUrl}/comments/${commentId}`,
-        updatedComment
+        updatedComment,
       )
       .subscribe(() => {
         this.commentsSignal.update((comments) =>
           comments.map((comment) =>
             comment.id === commentId
               ? { ...comment, ...updatedComment }
-              : comment
-          )
+              : comment,
+          ),
         );
       });
   }
