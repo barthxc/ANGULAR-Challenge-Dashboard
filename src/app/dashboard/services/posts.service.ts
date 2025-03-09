@@ -12,6 +12,7 @@ export class PostsService {
 
   constructor(private http: HttpClient) {}
 
+  //! CRUD
   getPosts() {
     this.http
       .get<PostResponse[]>(`${this.baseUrl}/posts`)
@@ -33,40 +34,6 @@ export class PostsService {
       this.postsSignal.update((posts) => posts.filter((p) => p.id !== postId));
     });
   }
-  //!TODO TESt using forkJoin
-  /*
-import { forkJoin } from 'rxjs';
-
-deletePostsByUser(userId: string) {
-  const postsToDelete = this.postsSignal().filter(
-    (post) => post.authorId === userId
-  );
-
-  const deleteRequests = postsToDelete.map((post) =>
-    this.http.delete(`${this.baseUrl}/posts/${post.id}`)
-  );
-
-  forkJoin(deleteRequests).subscribe(() => {
-    this.postsSignal.update((posts) =>
-      posts.filter((p) => p.authorId !== userId)
-    );
-  });
-}
-*/
-
-  deletePostsByUser(userId: string) {
-    const postsToDelete = this.postsSignal().filter(
-      (post) => post.authorId === userId,
-    );
-
-    postsToDelete.forEach((post) => {
-      this.http.delete(`${this.baseUrl}/posts/${post.id}`).subscribe(() => {
-        this.postsSignal.update((postsList) =>
-          postsList.filter((p) => p.id !== post.id),
-        );
-      });
-    });
-  }
 
   editPost(postId: string, updatedPost: PostResponse) {
     this.http
@@ -74,16 +41,27 @@ deletePostsByUser(userId: string) {
       .subscribe(() => {
         this.postsSignal.update((posts) =>
           posts.map((post) =>
-            post.id === postId ? { ...post, ...updatedPost } : post,
-          ),
+            post.id === postId ? { ...post, ...updatedPost } : post
+          )
         );
       });
   }
 
+  //! TOP DATA
   getTopPostsByComments() {
     return this.postsSignal()
       .sort((a, b) => b.comments - a.comments)
       .slice(0, 3)
       .map((post) => ({ id: post.id, title: post.title }));
+  }
+  //! UpdatePostWithExtraData
+  updatePostComments(postId: string, change: number) {
+    this.postsSignal.update((posts) =>
+      posts.map((post) =>
+        post.id === postId
+          ? { ...post, comments: post.comments + change }
+          : post
+      )
+    );
   }
 }

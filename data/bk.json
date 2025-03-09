@@ -1,0 +1,164 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice",
+      "posts": 2,
+      "comments": 3
+    },
+    {
+      "id": "2",
+      "name": "Bob",
+      "posts": 2,
+      "comments": 3
+    },
+    {
+      "id": "3",
+      "name": "Charlie",
+      "posts": 2,
+      "comments": 5
+    },
+    {
+      "id": "4",
+      "name": "Diana",
+      "posts": 2,
+      "comments": 3
+    }
+  ],
+  "posts": [
+    {
+      "id": "101",
+      "title": "Alice Post 1",
+      "authorId": "1",
+      "comments": 2
+    },
+    {
+      "id": "102",
+      "title": "Alice Post 2",
+      "authorId": "1",
+      "comments": 1
+    },
+    {
+      "id": "103",
+      "title": "Bob Post 1",
+      "authorId": "2",
+      "comments": 1
+    },
+    {
+      "id": "104",
+      "title": "Bob Post 2",
+      "authorId": "2",
+      "comments": 2
+    },
+    {
+      "id": "105",
+      "title": "Charlie Post 1",
+      "authorId": "3",
+      "comments": 3
+    },
+    {
+      "id": "106",
+      "title": "Charlie Post 2",
+      "authorId": "3",
+      "comments": 2
+    },
+    {
+      "id": "107",
+      "title": "Diana Post 1",
+      "authorId": "4",
+      "comments": 2
+    },
+    {
+      "id": "108",
+      "title": "Diana Post 2",
+      "authorId": "4",
+      "comments": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": "1001",
+      "text": "Nice post!",
+      "userId": "2",
+      "postId": "101"
+    },
+    {
+      "id": "1002",
+      "text": "Very interesting!",
+      "userId": "3",
+      "postId": "101"
+    },
+    {
+      "id": "1003",
+      "text": "Good read!",
+      "userId": "4",
+      "postId": "102"
+    },
+    {
+      "id": "1004",
+      "text": "Helpful tips!",
+      "userId": "1",
+      "postId": "103"
+    },
+    {
+      "id": "1005",
+      "text": "I agree with you!",
+      "userId": "3",
+      "postId": "104"
+    },
+    {
+      "id": "1006",
+      "text": "Well explained!",
+      "userId": "4",
+      "postId": "104"
+    },
+    {
+      "id": "1007",
+      "text": "Great insights!",
+      "userId": "1",
+      "postId": "105"
+    },
+    {
+      "id": "1008",
+      "text": "I learned something new.",
+      "userId": "2",
+      "postId": "105"
+    },
+    {
+      "id": "1009",
+      "text": "Thanks for sharing.",
+      "userId": "4",
+      "postId": "105"
+    },
+    {
+      "id": "1010",
+      "text": "Informative post.",
+      "userId": "1",
+      "postId": "106"
+    },
+    {
+      "id": "1011",
+      "text": "Very useful, thanks.",
+      "userId": "2",
+      "postId": "106"
+    },
+    {
+      "id": "1012",
+      "text": "Well written!",
+      "userId": "2",
+      "postId": "107"
+    },
+    {
+      "id": "1013",
+      "text": "I enjoyed reading it.",
+      "userId": "3",
+      "postId": "107"
+    },
+    {
+      "id": "1014",
+      "text": "Good summary.",
+      "userId": "1",
+      "postId": "108"
+    }
+  ]
+}

@@ -1,302 +1,68 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Alice",
-      "posts": 2,
-      "comments": 5
-    },
-    {
       "id": "2",
       "name": "Bob",
       "posts": 2,
-      "comments": 4
+      "comments": 3
     },
     {
       "id": "3",
       "name": "Charlie",
       "posts": 2,
-      "comments": 6
+      "comments": 5
     },
     {
       "id": "4",
       "name": "Diana",
       "posts": 2,
-      "comments": 5
-    },
-    {
-      "id": "5",
-      "name": "Eve",
-      "posts": 2,
-      "comments": 8
-    },
-    {
-      "id": "6",
-      "name": "Frank",
-      "posts": 2,
-      "comments": 7
-    },
-    {
-      "id": "7",
-      "name": "Grace",
-      "posts": 2,
-      "comments": 6
-    },
-    {
-      "id": "8",
-      "name": "Hank",
-      "posts": 2,
-      "comments": 6
-    },
-    {
-      "id": "9",
-      "name": "Ivy",
-      "posts": 2,
-      "comments": 7
+      "comments": 3
     }
   ],
   "posts": [
     {
-      "id": "101",
-      "title": "First Post",
-      "authorId": "1",
-      "comments": 3
-    },
-    {
-      "id": "102",
-      "title": "JavaScript Tips",
-      "authorId": "1",
-      "comments": 2
-    },
-    {
-      "id": "103",
-      "title": "Angular Best Practices",
-      "authorId": "2",
-      "comments": 3
-    },
-    {
       "id": "104",
-      "title": "React vs Vue",
+      "title": "Bob Post 2",
       "authorId": "2",
-      "comments": 1
+      "comments": 2
     },
     {
       "id": "105",
-      "title": "CSS Grid Basics",
+      "title": "Charlie Post 1",
       "authorId": "3",
-      "comments": 4
-    },
-    {
-      "id": "106",
-      "title": "Frontend vs Backend",
-      "authorId": "3",
-      "comments": 2
+      "comments": 3
     },
     {
       "id": "107",
-      "title": "Web Security 101",
+      "title": "Diana Post 1",
       "authorId": "4",
       "comments": 2
     },
     {
       "id": "108",
-      "title": "Database Management",
+      "title": "Diana Post 2",
       "authorId": "4",
-      "comments": 3
-    },
-    {
-      "id": "109",
-      "title": "Machine Learning Basics",
-      "authorId": "5",
-      "comments": 4
-    },
-    {
-      "id": "110",
-      "title": "AI in Software Development",
-      "authorId": "5",
-      "comments": 4
-    },
-    {
-      "id": "111",
-      "title": "Cloud Computing for Beginners",
-      "authorId": "6",
-      "comments": 4
-    },
-    {
-      "id": "112",
-      "title": "Node.js Fundamentals",
-      "authorId": "6",
-      "comments": 3
-    },
-    {
-      "id": "113",
-      "title": "TypeScript for Beginners",
-      "authorId": "7",
-      "comments": 3
-    },
-    {
-      "id": "114",
-      "title": "Docker and Containers",
-      "authorId": "7",
-      "comments": 3
-    },
-    {
-      "id": "115",
-      "title": "GraphQL Basics",
-      "authorId": "8",
-      "comments": 3
-    },
-    {
-      "id": "116",
-      "title": "Database Optimization",
-      "authorId": "8",
-      "comments": 3
-    },
-    {
-      "id": "117",
-      "title": "DevOps Introduction",
-      "authorId": "9",
-      "comments": 3
-    },
-    {
-      "id": "118",
-      "title": "AWS Services Overview",
-      "authorId": "9",
-      "comments": 4
+      "comments": 1
     }
   ],
   "comments": [
     {
-      "id": "1001",
-      "text": "Great post!",
-      "userId": "2",
-      "postId": "101"
-    },
-    {
-      "id": "1002",
-      "text": "Very informative.",
-      "userId": "3",
-      "postId": "101"
-    },
-    {
-      "id": "1003",
-      "text": "I learned a lot, thanks!",
-      "userId": "4",
-      "postId": "101"
-    },
-    {
-      "id": "1004",
-      "text": "Interesting, I will try this.",
-      "userId": "5",
-      "postId": "102"
-    },
-    {
-      "id": "1005",
-      "text": "This is a great tip!",
-      "userId": "6",
-      "postId": "102"
-    },
-    {
       "id": "1006",
-      "text": "Nice insights on Angular.",
-      "userId": "1",
-      "postId": "103"
-    },
-    {
-      "id": "1007",
-      "text": "Good comparison!",
-      "userId": "2",
-      "postId": "103"
-    },
-    {
-      "id": "1008",
-      "text": "Could you explain this further?",
-      "userId": "3",
-      "postId": "103"
+      "text": "Well explained!",
+      "userId": "4",
+      "postId": "104"
     },
     {
       "id": "1009",
-      "text": "Short but useful post.",
+      "text": "Thanks for sharing.",
       "userId": "4",
-      "postId": "104"
-    },
-    {
-      "id": "1010",
-      "text": "Very helpful, thanks!",
-      "userId": "5",
-      "postId": "104"
-    },
-    {
-      "id": "1011",
-      "text": "Great for beginners.",
-      "userId": "6",
-      "postId": "105"
-    },
-    {
-      "id": "1012",
-      "text": "CSS Grid is awesome!",
-      "userId": "7",
       "postId": "105"
     },
     {
       "id": "1013",
-      "text": "I didn’t know about this trick.",
-      "userId": "8",
-      "postId": "106"
-    },
-    {
-      "id": "1014",
-      "text": "Nice explanation.",
-      "userId": "9",
-      "postId": "106"
-    },
-    {
-      "id": "1016",
-      "text": "Thanks for sharing this.",
-      "userId": "2",
-      "postId": "107"
-    },
-    {
-      "id": "1017",
-      "text": "Great starting point.",
+      "text": "I enjoyed reading it.",
       "userId": "3",
-      "postId": "108"
-    },
-    {
-      "id": "1018",
-      "text": "This helped me a lot.",
-      "userId": "4",
-      "postId": "108"
-    },
-    {
-      "id": "1019",
-      "text": "Interesting topic.",
-      "userId": "5",
-      "postId": "109"
-    },
-    {
-      "id": "1020",
-      "text": "AI is definitely the future.",
-      "userId": "6",
-      "postId": "109"
-    },
-    {
-      "id": "1021",
-      "text": "Good overview.",
-      "userId": "7",
-      "postId": "110"
-    },
-    {
-      "id": "1022",
-      "text": "Very helpful insights.",
-      "userId": "8",
-      "postId": "110"
-    },
-    {
-      "id": "1023",
-      "text": "Great tips on debugging.",
-      "userId": "9",
-      "postId": null
+      "postId": "107"
     }
   ]
 }

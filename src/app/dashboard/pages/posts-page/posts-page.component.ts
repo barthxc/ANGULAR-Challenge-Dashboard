@@ -1,3 +1,4 @@
+import { LocalDataService } from './../../services/local-data.service';
 import { Component } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
 import { DialogService } from '../../services/dialog.service';
@@ -10,6 +11,7 @@ export class PostsPageComponent {
   constructor(
     private postsService: PostsService,
     private dialogService: DialogService,
+    private localDataService: LocalDataService
   ) {}
 
   posts = this.postsService.postsSignal();
@@ -21,10 +23,10 @@ export class PostsPageComponent {
       'Eliminar',
       'Cancelar',
       () => {
-        this.postsService.deletePost(postId);
+        this.localDataService.deletePost(postId);
       },
       'Se ha eliminado el post correctamente',
-      'success',
+      'success'
     );
   };
 

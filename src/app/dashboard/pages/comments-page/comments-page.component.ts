@@ -1,3 +1,4 @@
+import { LocalDataService } from './../../services/local-data.service';
 import { Component } from '@angular/core';
 import { CommentsService } from '../../services/comments.service';
 import { DialogService } from '../../services/dialog.service';
@@ -9,7 +10,8 @@ import { DialogService } from '../../services/dialog.service';
 export class CommentsPageComponent {
   constructor(
     private comentsService: CommentsService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private localDataService: LocalDataService
   ) {}
   coments = this.comentsService.commentsSignal();
 
@@ -20,7 +22,7 @@ export class CommentsPageComponent {
       'Eliminar',
       'Cancelar',
       () => {
-        this.comentsService.deleteComment(comentId);
+        this.localDataService.deleteComment(comentId);
       },
       'Se ha eliminado el comentario correctamente',
       'success'

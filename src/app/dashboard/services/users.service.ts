@@ -11,7 +11,7 @@ export class UsersService {
   usersSignal = signal<UserResponse[]>([]);
 
   constructor(private http: HttpClient) {}
-
+  //! CRUD
   getUsers() {
     this.http
       .get<UserResponse[]>(`${this.baseUrl}/users`)
@@ -20,15 +20,16 @@ export class UsersService {
       });
   }
 
-  newUser(user: UserResponse) {
+  newUser(userName: string) {
+    const newUser: Omit<UserResponse, 'id'> = {
+      name: userName,
+      posts: 0,
+      comments: 0,
+    };
     this.http
-      .post<UserResponse>(`${this.baseUrl}/users`, {
-        name: user.name,
-        posts: 0,
-        comments: 0,
-      })
-      .subscribe((newUser) => {
-        this.usersSignal.update((users) => [...users, newUser]);
+      .post<UserResponse>(`${this.baseUrl}/users`, newUser)
+      .subscribe((createdUser) => {
+        this.usersSignal.update((users) => [...users, createdUser]);
       });
   }
 
@@ -50,6 +51,7 @@ export class UsersService {
       });
   }
 
+  //! TOP DATA
   getTopUsersByPosts() {
     return this.usersSignal()
       .sort((a, b) => b.posts - a.posts)
@@ -62,5 +64,31 @@ export class UsersService {
       .sort((a, b) => b.comments - a.comments)
       .slice(0, 3)
       .map((user) => ({ id: user.id, name: user.name }));
+  }
+
+  //! UpdateUserWithExtraData
+  updateUserPosts(userId: string, change: number) {
+    const users = this.usersSignal();
+    const userIndex = users.findIndex((user) => user.id === userId);
+
+    if (userIndex === -1) return;
+
+    users[userIndex] = {
+      ...users[userIndex],
+      posts: users[userIndex].posts + change,
+    };
+
+    this.usersSignal.set(users);
+  }
+
+  updateUserComments(userId: string, change: number) {
+    const users = this.usersSignal();
+    const userIndex = users.findIndex((user) => user.id === userId);
+
+    if (userIndex === -1) return;
+    users[userIndex] = {
+      ...users[userIndex],
+      comments: users[userIndex].posts + change,
+    };
   }
 }

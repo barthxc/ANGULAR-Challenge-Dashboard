@@ -23,7 +23,7 @@ export class UsersPageComponent {
       'Eliminar',
       'Cancelar',
       () => {
-        this.localDataService.deleteUserAndPosts(userId);
+        this.localDataService.deleteUser(userId);
       },
       'Se ha eliminado el usuario correctamente',
       'success'
